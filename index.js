@@ -7,7 +7,7 @@ document.body.prepend(div);
 document.body.prepend(textarea);
 div.id = "keyboard";
 const keyboard = document.querySelector("#keyboard");
-const body = document.querySelector("body");
+
 
 
 let language = document.createElement('div');
@@ -40,29 +40,29 @@ language = document.querySelectorAll('.langItem');
 div = document.createElement('div');
 keyboard.append(div);
 keyboard.firstChild.setAttribute("id", "firstRow");
-let firstRow = document.querySelector("#firstRow");
+
 
 
 div = document.createElement('div');
 keyboard.append(div);
 keyboard.childNodes[1].setAttribute("id", "secondRow");
-let secondRow = document.querySelector("#secondRow");
+
 
 
 div = document.createElement('div');
 keyboard.append(div);
 keyboard.childNodes[2].setAttribute("id", "thirdRow");
-let thirdRow = document.querySelector("#thirdRow");
+
 
 
 div = document.createElement('div');
 keyboard.append(div);
 keyboard.childNodes[3].setAttribute("id", "fourthRow");
-let fourthRow = document.querySelector("#fourthRow");
+
 div = document.createElement('div');
 keyboard.append(div);
 keyboard.childNodes[4].setAttribute("id", "fifthRow");
-let fifthRow = document.querySelector("#fifthRow");
+
 
 const en = {
     firstRow: ["`","1","2","3","4","5","6","7","8","9","0","-","=","Backspace"],
@@ -154,7 +154,7 @@ textarea.onkeydown = function(event) {
         
     }
 }
-    textarea.onkeyup = function(event) {
+    textarea.onkeyup = function() {
         for (let i=0; i<button.length; i++) {
             let but = button[i];
             but.classList.remove('active')   
@@ -176,7 +176,7 @@ textarea.onkeydown = function(event) {
         arrChars.push(event.key);        // запоминаем код нажатой и пока еще не отпущенной клавиши
     });
 
-    document.addEventListener("keyup", function (event) {
+    document.addEventListener("keyup", function () {
         if (arrChars.length == 0) return; // нечего обрабатывать, завершаем функцию
 
         let runFunc = true;
@@ -188,7 +188,7 @@ textarea.onkeydown = function(event) {
                 
             }
         }
-        if (runFunc) {changeLang()};              // если нажаты, запускаем заданный код
+        if (runFunc) {changeLang()}              // если нажаты, запускаем заданный код
 
         arrChars.length = 0;              // очистим массив одновременно нажатых клавиш
     });
