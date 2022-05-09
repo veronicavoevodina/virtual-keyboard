@@ -218,16 +218,28 @@ button.forEach(el => {
         event.target.style.backgroundColor = "rgb(203, 122, 179)";
         return textarea.value;
          }
+         if (event.target.innerHTML === "Tab") {
+            event.target.style.backgroundColor = "rgb(203, 122, 179)";
+            textarea.value += "    ";
+         }
+         if (event.target.innerHTML === "Ctrl" || event.target.innerHTML === "Alt" || event.target.innerHTML === "Win" ) {
+            event.target.style.backgroundColor = "rgb(203, 122, 179)";
+         }
         if (event.target.innerHTML === "Enter") {
             event.target.style.backgroundColor = "rgb(203, 122, 179)";
             textarea.value+="\n";
-            
          }
         if (event.target.innerHTML === " ") {
     event.target.style.backgroundColor = "rgb(203, 122, 179)";
     textarea.value += " ";
-    
          }
+         if (event.target.innerHTML === "del") {
+            event.target.style.backgroundColor = "rgb(203, 122, 179)";
+            let s = textarea.selectionStart;
+            textarea.value = textarea.value.slice(0, textarea.selectionStart) + textarea.value.substr(textarea.selectionStart+1, textarea.value.length);
+         textarea.selectionStart = s;
+         textarea.selectionEnd = s;
+        }
         if (event.target.innerHTML === "Caps Lock")
 {
     
@@ -242,6 +254,17 @@ button.forEach(el => {
         letter.forEach(el => el.innerHTML = el.innerHTML.toLowerCase())}
     
          }
+         if (event.target.innerHTML === "Shift") {
+            event.target.style.backgroundColor = "rgb(203, 122, 179)";
+            if (keyboard.childNodes[1].childNodes[1].innerHTML === "q" || keyboard.childNodes[1].childNodes[1].innerHTML === "й"){
+            letter.forEach(el => {
+                el.innerHTML = el.innerHTML.toUpperCase(); 
+               
+               })
+            } else {
+                event.target.style.backgroundColor = "";
+                letter.forEach(el => el.innerHTML = el.innerHTML.toLowerCase())}
+         }
        }
     else {
           letter.forEach(el => el.style.backgroundColor = "")
@@ -254,21 +277,36 @@ button.forEach(el => {
        if (event.target.innerHTML in obj) {
         if (event.target.innerHTML === " ") {event.target.style.backgroundColor = "";}
         if (event.target.innerHTML === "Backspace") {event.target.style.backgroundColor = "";}
+        if (event.target.innerHTML === "del") {event.target.style.backgroundColor = "";}
 
+        if (event.target.innerHTML === "Ctrl" || event.target.innerHTML === "Alt" || event.target.innerHTML === "Win" ) {
+            event.target.style.backgroundColor = "";
+         }
+         if (event.target.innerHTML === "Tab") {
+            event.target.style.backgroundColor = "";
+         }
         if (event.target.innerHTML === "Enter") {
             event.target.style.backgroundColor = "";
         } 
-  
+        if (event.target.innerHTML === "Shift") {
+            event.target.style.backgroundColor = "";
+            if (keyboard.childNodes[1].childNodes[1].innerHTML === "q" || keyboard.childNodes[1].childNodes[1].innerHTML === "й"){
+            letter.forEach(el => {
+                el.innerHTML = el.innerHTML.toUpperCase(); 
+               })
+            } else {
+                event.target.style.backgroundColor = "";
+                letter.forEach(el => el.innerHTML = el.innerHTML.toLowerCase())}
+         }
     }
        else {
         event.target.style.backgroundColor = "";
       textarea.value += event.target.innerHTML;
-      console.log(event.target.innerHTML)
+      
        
    }}
    
-
-
+            
 /*
 
 
