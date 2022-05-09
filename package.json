@@ -1,0 +1,23 @@
+{
+  "name": "virtual-keyboard",
+  "version": "1.0.0",
+  "description": "Virtual keyboard",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/veronicavoevodina/virtual-keyboard.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/veronicavoevodina/virtual-keyboard/issues"
+  },
+  "homepage": "https://github.com/veronicavoevodina/virtual-keyboard#readme",
+  "scripts": {
+    "lint:check": "eslint .",
+    "lint:fix": "eslint --fix ."
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0"
+  }
+}
