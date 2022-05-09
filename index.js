@@ -1,5 +1,6 @@
 const textarea = document.createElement('textarea');
 textarea.id = "textarea";
+
 textarea.type = "text";
 let div = document.createElement('div');
 document.body.prepend(div);
@@ -147,7 +148,6 @@ function whatLang(lang) {
  const button = document.querySelectorAll(".button");
 
 textarea.onkeydown = function(event) {
-    console.log(event)
     for (let i=0; i<button.length; i++) {
         let but = button[i];
         if(event.key === but.innerHTML || event.code === but.className ) {but.classList.toggle('active')}
@@ -305,73 +305,9 @@ button.forEach(el => {
       
        
    }}
-   
-            
-/*
-
-
-
-function setLS(){
-    let firstrow = [];
-    let secondrow = [];
-    let thirdrow = [];
-    let fouthrow = [];
-    let fifthrow = [];
-      
-if(keyboard.childNodes[2].childNodes[1].innerHTML === "a") {localStorage.setItem("lang", "eng")}
-else {localStorage.setItem("lang", "rus")}
-}
+ 
 
 
 
 
 
-
-
-
-
-
-for (let i=0; i<button.length; i++) {
-if(button[i].innerHTML === "Ctrl") {button[i].classList.add("Control")};
-if(button[i].innerHTML === "Caps Lock") {button[i].classList.add("Capslock")};
-if(button[i].innerHTML === "Enter") {button[i].classList.add("Enter")};
-if(button[i].innerHTML === "Alt") {button[i].classList.add("Alt")};
-if(button[i].innerHTML === "Win") {button[i].classList.add("Meta")};
-if(button[i].innerHTML === "") {button[i].classList.add("Space")};
-if(button[i].innerHTML === "del") {button[i].classList.add("Delete")};
-if(button[i].innerHTML === "Backspace") {button[i].classList.add("Backspace")}; 
-if(button[i].innerHTML === "Tab") {button[i].classList.add("Tab")}; 
-if(button[42]){button[42].classList.add("ShiftLeft");}
-if(button[55]){button[55].classList.add("ShiftRight");}
-
-}
-
-
-
-
-    newEvent = document.createEvent('CustomEvent');
-            newEvent.initCustomEvent('keyup', true, true, {isTrusted: true,
-                bubbles: true,
-                cancelBubble: false,
-                cancelable: true,
-                charCode: 0,
-                code: "Enter",
-                composed: true,
-                ctrlKey: false,
-                currentTarget: null,
-                defaultPrevented: false,
-                detail: 0,
-                eventPhase: 0,
-                isComposing: false,
-                key: "Enter",
-                keyCode: 13,
-                location: 0,
-                metaKey: false,
-                repeat: false,
-                returnValue: true,
-                shiftKey: false,
-                timeStamp: 25377.299999952316,
-                type: "keyup",
-                which: 13
-            });
-                textarea.dispatchEvent(newEvent);*/
