@@ -188,7 +188,7 @@ textarea.onkeydown = function(event) {
                 
             }
         }
-        if (runFunc) {changeLang()}              // если нажаты, запускаем заданный код
+        if (runFunc) {changeLang()}            
 
         arrChars.length = 0;              // очистим массив одновременно нажатых клавиш
     });
