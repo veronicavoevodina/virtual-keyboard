@@ -278,7 +278,7 @@ button.forEach(el => {
 
    function FuncMouseup(event) {
        if (event.target.innerHTML in obj) {
-        event.target.style.backgroundColor = "";
+        
         if (event.target.innerHTML === " ") {event.target.style.backgroundColor = "";}
         if (event.target.innerHTML === "Backspace") {event.target.style.backgroundColor = "";}
         if (event.target.innerHTML === "del") {event.target.style.backgroundColor = "";}
