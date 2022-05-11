@@ -83,20 +83,20 @@ const letters = ["q", "w", "e", "r", "t","y","u","i","o","p", "a", "s", 'd', 'f'
 
 
 const obj = {
-    "Tab":{9: "Tab", value: false,},
-    "Caps Lock":{20: "CapsLock", value: false,},
-    "Shift":{16: "Shift", value: false,},
-    "Ctrl":{17: "Control", value: false,},
-    "Win":{91: "Meta", value: false,},
-    " ":{32: " ", value: false,},
-    "Alt":{18: "Alt", value: false,},
-    "&#8592;":{37: "ArrowLeft", value: false,},
-    "&#8595;":{40: "ArrowDown", value: false,},
-    "&#8594;":{39: "ArrowRight", value: false,},
-    "&#8593;":{38: "ArrowUp", value: false,},
-    "del":{46: "Delete", value: false,},
-    "Backspace":{8: "Backspace", value: false,},
-    "Enter":{13: "Enter", value: false,},
+    "Tab":{name: "Tab", value: false,},
+    "Caps Lock":{name: "CapsLock", value: false,},
+    "Shift":{name: "Shift", value: false,},
+    "Ctrl":{name: "Control", value: false,},
+    "Win":{name: "Meta", value: false,},
+    " ":{name: " ", value: false,},
+    "Alt":{name: "Alt", value: false,},
+    "&#8592;":{name: "ArrowLeft", value: false,},
+    "&#8595;":{name: "ArrowDown", value: false,},
+    "&#8594;":{name: "ArrowRight", value: false,},
+    "&#8593;":{name: "ArrowUp", value: false,},
+    "del":{name: "Delete", value: false,},
+    "Backspace":{name: "Backspace", value: false,},
+    "Enter":{name: "Enter", value: false,},
 
 }
 
@@ -152,14 +152,26 @@ function whatLang(lang) {
 textarea.onkeydown = function(event) {
     for (let i=0; i<button.length; i++) {
         let but = button[i];
-        if(event.key === but.innerHTML || event.code === but.className ) {but.classList.toggle('active')}
-        
+        if(event.key === but.innerHTML || event.code === but.className ) {but.classList.toggle('active')}    
+    }
+    for (key in obj) {
+        if(event.key === obj[key].name){
+        button.forEach(el => {
+
+            if (el.innerHTML === key) {
+                console.log(el.innerHTML)
+                el.classList.add('active')}
+        })
+           
+
+        }
     }
 }
     textarea.onkeyup = function() {
         for (let i=0; i<button.length; i++) {
             let but = button[i];
             but.classList.remove('active')   
+        
         }
 }
 
