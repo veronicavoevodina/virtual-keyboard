@@ -100,6 +100,8 @@ const obj = {
 
 }
 
+
+
 let langEn = document.querySelector('.English');
 let langRu = document.querySelector('.Russian');
 keyboard.childNodes.forEach((el) => {
@@ -213,6 +215,7 @@ button.forEach(el => {
   
    function FuncMousedown(event) {
       if (event.target.innerHTML in obj) {
+        event.target.style.backgroundColor = "rgb(203, 122, 179)";
         if (event.target.innerHTML === "Backspace") {
         textarea.value = textarea.value.substr(0, textarea.value.length-1);
         event.target.style.backgroundColor = "rgb(203, 122, 179)";
@@ -275,6 +278,7 @@ button.forEach(el => {
 
    function FuncMouseup(event) {
        if (event.target.innerHTML in obj) {
+        event.target.style.backgroundColor = "";
         if (event.target.innerHTML === " ") {event.target.style.backgroundColor = "";}
         if (event.target.innerHTML === "Backspace") {event.target.style.backgroundColor = "";}
         if (event.target.innerHTML === "del") {event.target.style.backgroundColor = "";}
